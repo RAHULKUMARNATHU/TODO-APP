@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" 
+    crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <div class="container">
+        <!-- FOr Heading  -->
+        <h1> TODO APP</h1>
+        <!-- Form Part -->
+        <form action="/addTask" method="post">
+            <!-- Exploring task that user have to do -->
+            <div class="desc">
+                <h3>Description</h3>
+                <input type="text" name="description" placeholder="What do you need to do?" required>
+            </div>
+            <!-- Provide category and due date-->
+            <div class="category_duedate">
+                <!-- Category of the task -->
+                <div class="category">
+                    <h3>Category</h3>
+                    <!-- Different Categories -->
+                    <select name="category">
+                        <optgroup label for ="Choose a category">
+                        <option>Choose a category</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="School">School</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Other">Other</option>
+                        </optgroup>
+                    
+                    </select>
+                </div>
+                <!-- Due date for completion of task-->
+                <div class="duedate">
+                    <h3>Due Date</h3>
+                    <input type="date" name="duedate" required>
+                </div>
+            </div>
+            <!-- Buttons for adding and deleting tasks -->
+            <div class="btn1">
+                <button type="submit" id="add"><i class="fas fa-plus"></i> ADD TASK</button>
+            </div>
+        </form>            
+        <!-- form to delete the tasks -->
+        <form action="/delete" method="post">
+            <ul>
+                <%for(let i of todo_list){%>
+                    <li>
+                        <!-- Card that contain task's description, their due date and category -->
+                        <div class="cards">
+                            <input type="checkbox" id="card<%= i.uniqueCode %>" value="<%= i.uniqueCode %>" name="card" >
+                            <label for="card<%= i.uniqueCode %>"><%= i.description %></label>
+                            <p><i class="fas fa-calendar-week"></i>  <%= i.dueDate.getDate() %>-<%= i.dueDate.getMonth()+1 %>-<%= i.dueDate.getFullYear() %></p>
+                        </div>
+                        <!-- category of task in card -->
+                        <div class="card_category">
+                            <p id="<%= i.category %>"><%= i.category %></p>
+                        </div>
+                    </li>
+                <%}%>
+            </ul>
+            <!-- Button for Deleting Tasks -->
+                <div class="btn2">
+                    <button type="submit" id="del"> <i class="fas fa-trash"></i> DELETE TASKS</button>
+                </div>
+        </form>
+    
+    </div>
+</body>
+</html>
