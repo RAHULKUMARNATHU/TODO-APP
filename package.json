@@ -14,5 +14,14 @@
     "mongoose": "^6.2.0",
     "nodemon": "^2.0.15",
     "popups": "^1.1.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RAHULKUMARNATHURAHULKUMARNATHU/TODO-APP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RAHULKUMARNATHU/TODO-APP/issues"
+  },
+  "homepage": "https://github.com/RAHULKUMARNATHU/TODO-APP#readme"
 }

@@ -160,13 +160,13 @@ button{
     background-color: blue;
 }
 #School{
-    background-color: yellow;
+    background-color: rgb(0, 166, 255);
 }
-#Cleaning{
+#Office{
     background-color: green;
 }
-#Other{
-    background-color: aquamarine;
+#Others{
+    background-color: rgba(221, 54, 16, 0.982);
 }
 
 ul li{
